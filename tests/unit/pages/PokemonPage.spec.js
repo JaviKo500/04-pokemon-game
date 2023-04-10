@@ -38,4 +38,24 @@ describe('PokemonPage component', () => {
 
     });
 
+    test( 'should show PokemonPicture and PokemonOptions', () => {
+        const wrapper = shallowMount( PokemonPage, {
+            data() {
+                return {
+                    pokemonsArr: pokemons,
+                    pokemon: pokemons[0],
+                    showPokemon: false,
+                    showAnswer: false,
+                    message: ''
+                }
+            }
+        } );
+
+        const pokemonPicture = wrapper.find('pokemon-picture-stub'); 
+        const pokemonOptions = wrapper.find('pokemon-options-stub'); 
+        expect( pokemonPicture.exists() ).toBeTruthy();
+        expect( pokemonOptions.exists() ).toBeTruthy();
+        expect( pokemonPicture.attributes('pokemonid') ).toBe('1');
+        expect( pokemonOptions.attributes('pokemons') ).toBeTruthy();
+    });
 });
