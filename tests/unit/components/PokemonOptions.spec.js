@@ -38,8 +38,7 @@ describe('PokemonOptions Component', () => {
         expect( wrapper.emitted('selection')[1] ).toEqual([3]);
         expect( wrapper.emitted('selection')[2] ).toEqual([4]);
         expect( wrapper.emitted('selection')[3] ).toEqual([2]);
-
-
+        
     });
 
 });
